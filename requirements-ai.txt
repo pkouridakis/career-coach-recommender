@@ -1,0 +1,6 @@
+# AI-enhanced dependencies (optional)
+# Enables semantic similarity in content-based filtering
+# Install with: pip install -r requirements-ai.txt
+-r requirements.txt
+sentence-transformers>=2.7.0
+torch>=2.0.0
