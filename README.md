@@ -1,6 +1,6 @@
 # Career Coach Recommender
 
-A certificate recommendation system built for PeopleCert's learning platform. Given a user's profile and purchase history, it recommends the most relevant certifications using content-based filtering, co-occurrence analysis, and interaction signals.
+A certificate recommendation system built for a learning platform. Given a user's profile and purchase history, it recommends the most relevant certifications using content-based filtering, co-occurrence analysis, and interaction signals.
 
 ---
 
