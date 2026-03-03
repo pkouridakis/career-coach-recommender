@@ -75,20 +75,17 @@ def content_based_recommend(user_id, users_df, catalog_df):
     for _, cert in catalog_df.iterrows():
         cert_id = cert["cert_id"]
 
-        if cert_id in user_purchases:          # ← αυτό προσθέτεις
+        if cert_id in user_purchases:
             continue
         if not check_prerequisites(cert_id, catalog_df, user_purchases):
             continue
     
-
-        # --- Skill similarity (semantic or exact) ---
         skill_score = _skill_similarity(user["skills"], cert["skills"])
 
-        # --- Goal-to-description similarity ---
         if SEMANTIC_ENABLED:
             goal_score = _semantic_similarity(user["goal"], cert["short_desc"])
         else:
-            # Exact word-overlap fallback (original logic)
+            
             user_goal_words = [w for w in user["goal"].split() if len(w) > 3]
             goal_score = sum(1 for w in user_goal_words if w in cert["short_desc"])
 
